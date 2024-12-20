@@ -9,7 +9,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: product-service
-          uri: lb://product-service/
-          predicates:
-            - Path=/product-service/**
+        id: product-service
+        uri: lb://product-service/
+        predicates:
+          Path=/product-service/**
