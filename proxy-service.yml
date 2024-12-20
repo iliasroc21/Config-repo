@@ -1,15 +1,21 @@
 server:
   port: 9999
+
 eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/
   instance:
     hostname: localhost
+
 spring:
   application:
     name: proxy-service
+
   cloud:
     gateway:
       routes:
-        id: product-service
-        uri: lb://product-service/
-        predicates:
-          Path=/product-service/**
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/product-service/**
