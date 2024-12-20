@@ -11,8 +11,10 @@ eureka:
 spring:
   application:
     name: proxy-service
-
+  config :
+    import : optional:config-server
   cloud:
+
     gateway:
       routes:
         - id: product-service
