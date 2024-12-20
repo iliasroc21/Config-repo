@@ -1,6 +1,5 @@
 server:
   port: 9999
-
 eureka:
   client:
     service-url:
@@ -11,10 +10,7 @@ eureka:
 spring:
   application:
     name: proxy-service
-  config :
-    import : optional:config-server
   cloud:
-
     gateway:
       routes:
         - id: product-service
